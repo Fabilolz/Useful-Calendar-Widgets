@@ -18,8 +18,6 @@ Captured from the Android app in an emulator with sample events, three demo cale
 | --- | --- | --- |
 | <img src="docs/images/app/widgets.png" alt="Widget customization screen" width="235"> | <img src="docs/images/app/calendars.png" alt="Work, Personal, and Fitness calendars" width="235"> | <img src="docs/images/app/agenda.png" alt="Agenda with sample events" width="235"> |
 
-<img src="docs/images/app/weather.png" alt="Weather settings with the fictional location Maple Bay" width="380">
-
 ## Widget previews
 
 Rendered with the app's Android widget layouts using sample events and simulated weather.
@@ -32,15 +30,9 @@ Rendered with the app's Android widget layouts using sample events and simulated
 | --- | --- |
 | <img src="docs/images/widgets/month.png" alt="Month widget" width="390"> | <img src="docs/images/widgets/day.png" alt="Day widget" width="390"> |
 
-**Up Next**
-
-<img src="docs/images/widgets/up-next.png" alt="Up Next widget with optional weather" width="390">
-
-### Widget settings in the app
-
-| Agenda | Up Next | Month | Week | Day |
-| --- | --- | --- | --- | --- |
-| <img src="docs/images/gallery/agenda.png" alt="Agenda settings" width="150"> | <img src="docs/images/gallery/up-next.png" alt="Up Next settings" width="150"> | <img src="docs/images/gallery/month.png" alt="Month settings" width="150"> | <img src="docs/images/gallery/week.png" alt="Week settings" width="150"> | <img src="docs/images/gallery/day.png" alt="Day settings" width="150"> |
+|Up Next
+| --- |
+|<img src="docs/images/widgets/up-next.png" alt="Up Next widget with optional weather" width="390">
 
 ## Install
 
