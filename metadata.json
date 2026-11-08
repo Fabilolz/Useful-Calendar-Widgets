@@ -1,0 +1,6 @@
+{
+  "name": "Express Cal",
+  "description": "Material 3 Expressive calendar widgets and agenda views with Google Calendar integration and calendar filtering.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

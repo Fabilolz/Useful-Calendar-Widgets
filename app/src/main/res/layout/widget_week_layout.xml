@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_week_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image supporting continuous 0-100% opacity and custom color filter -->
+    <ImageView
+        android:id="@+id/widget_background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/widget_bg_shape" />
+
+    <LinearLayout
+        android:id="@+id/widget_week_content_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="10dp">
+
+        <!-- Header -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <TextView
+                android:id="@+id/widget_week_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08"
+                android:text="THIS WEEK'S TIMELINE"
+                android:textColor="#FF5252"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/widget_week_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif"
+                android:text="2 items today"
+                android:textColor="#E040FB"
+                android:textSize="11.5sp"
+                android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- 7-Day Pill Row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:orientation="horizontal">
+
+            <!-- Day 1 -->
+            <FrameLayout
+                android:id="@+id/week_day_1"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/week_day_1_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/week_day_1_lbl" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="LU" android:textColor="#888899" android:textSize="9.5sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/week_day_1_num" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="26" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Day 2 -->
+            <FrameLayout
+                android:id="@+id/week_day_2"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/week_day_2_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/week_day_2_lbl" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="MA" android:textColor="#888899" android:textSize="9.5sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/week_day_2_num" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="27" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Day 3 -->
+            <FrameLayout
+                android:id="@+id/week_day_3"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/week_day_3_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/week_day_3_lbl" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="ME" android:textColor="#888899" android:textSize="9.5sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/week_day_3_num" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="28" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Day 4 -->
+            <FrameLayout
+                android:id="@+id/week_day_4"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/week_day_4_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/week_day_4_lbl" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="GI" android:textColor="#888899" android:textSize="9.5sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/week_day_4_num" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="29" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Day 5 -->
+            <FrameLayout
+                android:id="@+id/week_day_5"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/week_day_5_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/week_day_5_lbl" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="VE" android:textColor="#888899" android:textSize="9.5sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/week_day_5_num" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="30" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Day 6 -->
+            <FrameLayout
+                android:id="@+id/week_day_6"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/week_day_6_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/week_day_6_lbl" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="SA" android:textColor="#888899" android:textSize="9.5sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/week_day_6_num" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="31" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Day 7 -->
+            <FrameLayout
+                android:id="@+id/week_day_7"
+                android:layout_width="0dp"
+                android:layout_height="44dp"
+                android:layout_marginHorizontal="2dp"
+                android:layout_weight="1">
+                <ImageView
+                    android:id="@+id/week_day_7_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="vertical">
+                    <TextView android:id="@+id/week_day_7_lbl" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:text="DO" android:textColor="#888899" android:textSize="9.5sp" android:textStyle="bold" />
+                    <TextView android:id="@+id/week_day_7_num" android:includeFontPadding="false" android:layout_width="wrap_content" android:layout_height="wrap_content" android:layout_marginTop="1dp" android:text="1" android:textColor="#FFFFFF" android:textSize="13sp" android:textStyle="bold" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <ListView
+            android:id="@+id/widget_week_events_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp"
+            android:divider="@android:color/transparent"
+            android:dividerHeight="6dp"
+            android:scrollbars="none"
+            android:visibility="gone" />
+        <!-- Event 1 Card -->
+        <FrameLayout
+            android:id="@+id/widget_week_event_card"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginTop="10dp">
+
+            <ImageView
+                android:id="@+id/widget_week_event_card_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/widget_card_shape" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/widget_week_event_bar"
+                    android:layout_width="3dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/widget_week_event_title" android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Yoga Class"
+                        android:textColor="#FF80AB"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/widget_week_event_time" android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="4:00–5:00 PM • Golden Gate Park"
+                        android:textColor="#F48FB1"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/widget_week_hours"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:fontFamily="sans-serif-medium" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Event 2 Card (for larger spaces) -->
+        <FrameLayout
+            android:id="@+id/widget_week_event_card_2"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/widget_week_event_card_2_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/widget_card_shape" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/widget_week_event_bar_2"
+                    android:layout_width="3dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/widget_week_event_title_2" android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Dinner with Ravi"
+                        android:textColor="#FF80AB"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/widget_week_event_time_2" android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="6:00–7:30 PM"
+                        android:textColor="#F48FB1"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/widget_week_hours_2"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:fontFamily="sans-serif-medium" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Event 2 Card (for larger spaces) -->
+        <FrameLayout
+            android:id="@+id/widget_week_event_card_3"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/widget_week_event_card_3_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/widget_card_shape" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/widget_week_event_bar_3"
+                    android:layout_width="3dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/widget_week_event_title_3" android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Dinner with Ravi"
+                        android:textColor="#FF80AB"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/widget_week_event_time_3" android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="6:00–7:30 PM"
+                        android:textColor="#F48FB1"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/widget_week_hours_3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:fontFamily="sans-serif-medium" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Event 2 Card (for larger spaces) -->
+        <FrameLayout
+            android:id="@+id/widget_week_event_card_4"
+            android:layout_width="match_parent"
+            android:layout_height="37dp"
+            android:layout_marginTop="6dp"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/widget_week_event_card_4_bg"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:contentDescription="@null"
+                android:scaleType="fitXY"
+                android:src="@drawable/widget_card_shape" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:orientation="horizontal"
+                android:paddingStart="8dp"
+                android:layout_gravity="center_vertical"
+                android:paddingTop="2dp"
+                android:paddingEnd="10dp"
+                android:paddingBottom="2dp">
+
+                <ImageView
+                    android:id="@+id/widget_week_event_bar_4"
+                    android:layout_width="3dp"
+                    android:layout_height="26dp"
+                    android:layout_marginEnd="8dp"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+
+                <LinearLayout
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:orientation="vertical">
+
+                    <TextView
+                        android:id="@+id/widget_week_event_title_4" android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Dinner with Ravi"
+                        android:textColor="#FF80AB"
+                        android:textSize="13sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:id="@+id/widget_week_event_time_4" android:includeFontPadding="false"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="1dp"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="6:00–7:30 PM"
+                        android:textColor="#F48FB1"
+                        android:textSize="11sp" />
+                </LinearLayout>
+                <TextView
+                    android:id="@+id/widget_week_hours_4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="8dp"
+                    android:includeFontPadding="false"
+                    android:maxLines="1"
+                    android:fontFamily="sans-serif-medium" />
+
+            </LinearLayout>
+        </FrameLayout>
+
+        <!-- Empty state text -->
+        <TextView
+            android:id="@+id/widget_week_empty_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="7dp"
+            android:gravity="center"
+            android:text="@string/all_clear_today"
+            android:textColor="#B0BEC5"
+            android:textSize="12sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</FrameLayout>

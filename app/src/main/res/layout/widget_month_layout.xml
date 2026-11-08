@@ -1,0 +1,665 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_month_root"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Background Image supporting continuous 0-100% opacity and custom color filter -->
+    <ImageView
+        android:id="@+id/widget_background_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:contentDescription="@null"
+        android:scaleType="fitXY"
+        android:src="@drawable/widget_bg_shape" />
+
+    <LinearLayout
+        android:id="@+id/widget_month_content_root"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:padding="12dp">
+
+        <!-- Header: Month Year and today count badge -->
+        <LinearLayout
+            android:id="@+id/widget_month_header"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical"
+            android:orientation="horizontal"
+            android:paddingStart="14dp"
+            android:paddingEnd="6dp">
+
+            <TextView
+                android:id="@+id/widget_month_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:fontFamily="sans-serif-medium"
+                android:letterSpacing="0.08"
+                android:text="OCTOBER 2026"
+                android:textAllCaps="true"
+                android:textColor="#FF5252"
+                android:textSize="12sp"
+                android:textStyle="bold" />
+
+            <FrameLayout
+                android:id="@+id/widget_month_badge_container"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content">
+
+                <ImageView
+                    android:id="@+id/widget_month_badge_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_pill_shape" />
+
+                <TextView
+                    android:id="@+id/widget_month_badge"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="sans-serif-medium"
+                    android:paddingStart="8dp"
+                    android:paddingTop="2dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="2dp"
+                    android:text="3 today"
+                    android:textColor="#E040FB"
+                    android:textSize="10.5sp"
+                    android:textStyle="bold" />
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Weekday row -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="horizontal">
+
+            <TextView android:id="@+id/widget_month_w1" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="L" android:textColor="#888899" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:id="@+id/widget_month_w2" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="M" android:textColor="#888899" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:id="@+id/widget_month_w3" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="M" android:textColor="#888899" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:id="@+id/widget_month_w4" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="G" android:textColor="#888899" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:id="@+id/widget_month_w5" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="V" android:textColor="#888899" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:id="@+id/widget_month_w6" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="S" android:textColor="#888899" android:textSize="10sp" android:textStyle="bold" />
+            <TextView android:id="@+id/widget_month_w7" android:layout_width="0dp" android:layout_height="wrap_content" android:layout_weight="1" android:gravity="center" android:text="D" android:textColor="#888899" android:textSize="10sp" android:textStyle="bold" />
+        </LinearLayout>
+
+        <!-- Week 1 -->
+        <LinearLayout
+            android:id="@+id/widget_month_row_1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/cell_1" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_2" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_3" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="1" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_4" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="2" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_5" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="3" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_6" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="4" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_7" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="5" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+        </LinearLayout>
+
+        <!-- Week 2 -->
+        <LinearLayout
+            android:id="@+id/widget_month_row_2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/cell_8" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="6" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_9" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="7" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_10" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="8" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_11" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="9" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_12" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="10" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_13" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="11" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_14" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="12" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+        </LinearLayout>
+
+        <!-- Week 3 -->
+        <LinearLayout
+            android:id="@+id/widget_month_row_3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/cell_15" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="13" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_16" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="14" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_17" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="15" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_18" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="16" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_19" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="17" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_20" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="18" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_21" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="19" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+        </LinearLayout>
+
+        <!-- Week 4 -->
+        <LinearLayout
+            android:id="@+id/widget_month_row_4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/cell_22" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="20" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_23" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="21" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_24" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="22" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_25" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="23" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_26" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="24" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_27" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="25" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_28" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="26" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+        </LinearLayout>
+
+        <!-- Week 5 -->
+        <LinearLayout
+            android:id="@+id/widget_month_row_5"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/cell_29" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="27" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_30" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="28" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_31" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="29" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_32" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="30" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_33" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="31" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_34" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_35" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+        </LinearLayout>
+
+        <!-- Week 6 (For months spanning 6 weeks, e.g. Nov 2026) -->
+        <LinearLayout
+            android:id="@+id/widget_month_row_6"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="2dp"
+            android:orientation="horizontal">
+            <TextView android:id="@+id/cell_36" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_37" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_38" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_39" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_40" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_41" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+            <TextView android:id="@+id/cell_42" android:layout_width="0dp" android:layout_height="16dp" android:layout_weight="1" android:gravity="center" android:text="" android:textColor="#EEEEEE" android:textSize="10.5sp" />
+        </LinearLayout>
+
+        <!-- Events container for multiple consecutive events -->
+        <FrameLayout
+            android:id="@+id/widget_month_expanded_spacer"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:visibility="gone" />
+        <LinearLayout
+            android:id="@+id/widget_month_events_container"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:orientation="vertical">
+
+            <!-- Event Card 1 -->
+            <FrameLayout
+                android:id="@+id/widget_month_event_card_1"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="2dp">
+
+                <ImageView
+                    android:id="@+id/widget_month_event_card_1_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_card_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp">
+
+                    <ImageView
+                        android:id="@+id/widget_month_event_1_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/widget_circle_shape" />
+
+                    <TextView
+                        android:id="@+id/widget_month_event_1_teaser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" android:gravity="center_vertical" android:includeFontPadding="false"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Event 1 (4:00 PM–5:00 PM)"
+                        android:textColor="#FF80AB"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/widget_month_hours_1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1" />
+                </LinearLayout>
+            </FrameLayout>
+
+            <!-- Event Card 2 -->
+            <FrameLayout
+                android:id="@+id/widget_month_event_card_2"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:id="@+id/widget_month_event_card_2_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_card_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp">
+
+                    <ImageView
+                        android:id="@+id/widget_month_event_2_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/widget_circle_shape" />
+
+                    <TextView
+                        android:id="@+id/widget_month_event_2_teaser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" android:gravity="center_vertical" android:includeFontPadding="false"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Event 2 (6:00 PM–7:00 PM)"
+                        android:textColor="#FF80AB"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/widget_month_hours_2"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1" />
+                </LinearLayout>
+            </FrameLayout>
+            <!-- Event Card 3 -->
+            <FrameLayout
+                android:id="@+id/widget_month_event_card_3"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:id="@+id/widget_month_event_card_3_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_card_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp">
+
+                    <ImageView
+                        android:id="@+id/widget_month_event_3_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/widget_circle_shape" />
+
+                    <TextView
+                        android:id="@+id/widget_month_event_3_teaser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" android:gravity="center_vertical" android:includeFontPadding="false"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Event 3 (6:00 PM–7:00 PM)"
+                        android:textColor="#FF80AB"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/widget_month_hours_3"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1" />
+                </LinearLayout>
+            </FrameLayout>
+            <!-- Event Card 4 -->
+            <FrameLayout
+                android:id="@+id/widget_month_event_card_4"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:id="@+id/widget_month_event_card_4_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_card_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp">
+
+                    <ImageView
+                        android:id="@+id/widget_month_event_4_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/widget_circle_shape" />
+
+                    <TextView
+                        android:id="@+id/widget_month_event_4_teaser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" android:gravity="center_vertical" android:includeFontPadding="false"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Event 4 (6:00 PM–7:00 PM)"
+                        android:textColor="#FF80AB"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/widget_month_hours_4"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1" />
+                </LinearLayout>
+            </FrameLayout>
+            <!-- Event Card 5 -->
+            <FrameLayout
+                android:id="@+id/widget_month_event_card_5"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:id="@+id/widget_month_event_card_5_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_card_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp">
+
+                    <ImageView
+                        android:id="@+id/widget_month_event_5_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/widget_circle_shape" />
+
+                    <TextView
+                        android:id="@+id/widget_month_event_5_teaser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" android:gravity="center_vertical" android:includeFontPadding="false"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Event 5 (6:00 PM–7:00 PM)"
+                        android:textColor="#FF80AB"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/widget_month_hours_5"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1" />
+                </LinearLayout>
+            </FrameLayout>
+            <!-- Event Card 6 -->
+            <FrameLayout
+                android:id="@+id/widget_month_event_card_6"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:id="@+id/widget_month_event_card_6_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_card_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp">
+
+                    <ImageView
+                        android:id="@+id/widget_month_event_6_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/widget_circle_shape" />
+
+                    <TextView
+                        android:id="@+id/widget_month_event_6_teaser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" android:gravity="center_vertical" android:includeFontPadding="false"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Event 6 (6:00 PM–7:00 PM)"
+                        android:textColor="#FF80AB"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/widget_month_hours_6"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1" />
+                </LinearLayout>
+            </FrameLayout>
+            <!-- Event Card 7 -->
+            <FrameLayout
+                android:id="@+id/widget_month_event_card_7"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:id="@+id/widget_month_event_card_7_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_card_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp">
+
+                    <ImageView
+                        android:id="@+id/widget_month_event_7_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/widget_circle_shape" />
+
+                    <TextView
+                        android:id="@+id/widget_month_event_7_teaser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" android:gravity="center_vertical" android:includeFontPadding="false"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Event 7 (6:00 PM–7:00 PM)"
+                        android:textColor="#FF80AB"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/widget_month_hours_7"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1" />
+                </LinearLayout>
+            </FrameLayout>
+            <!-- Event Card 8 -->
+            <FrameLayout
+                android:id="@+id/widget_month_event_card_8"
+                android:layout_width="match_parent"
+                android:layout_height="24dp"
+                android:layout_marginTop="3dp">
+
+                <ImageView
+                    android:id="@+id/widget_month_event_card_8_bg"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:contentDescription="@null"
+                    android:scaleType="fitXY"
+                    android:src="@drawable/widget_card_shape" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:paddingStart="8dp"
+                    android:paddingTop="0dp"
+                    android:paddingEnd="8dp"
+                    android:paddingBottom="0dp">
+
+                    <ImageView
+                        android:id="@+id/widget_month_event_8_dot"
+                        android:layout_width="6dp"
+                        android:layout_height="6dp"
+                        android:contentDescription="@null"
+                        android:src="@drawable/widget_circle_shape" />
+
+                    <TextView
+                        android:id="@+id/widget_month_event_8_teaser"
+                        android:layout_width="0dp"
+                        android:layout_height="match_parent" android:gravity="center_vertical" android:includeFontPadding="false"
+                        android:layout_marginStart="8dp"
+                        android:layout_weight="1"
+                        android:ellipsize="end"
+                        android:fontFamily="sans-serif-medium"
+                        android:maxLines="1"
+                        android:singleLine="true"
+                        android:text="Event 8 (6:00 PM–7:00 PM)"
+                        android:textColor="#FF80AB"
+                        android:textSize="10.5sp"
+                        android:textStyle="bold" />
+                    <TextView
+                        android:id="@+id/widget_month_hours_8"
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_marginStart="6dp"
+                        android:gravity="center_vertical"
+                        android:includeFontPadding="false"
+                        android:maxLines="1" />
+                </LinearLayout>
+            </FrameLayout>
+        </LinearLayout>
+
+        <!-- Empty state text -->
+        <TextView
+            android:id="@+id/widget_month_empty_text"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:gravity="center"
+            android:text="@string/all_clear_today"
+            android:textColor="#B0BEC5"
+            android:textSize="11sp"
+            android:visibility="gone" />
+
+    </LinearLayout>
+</FrameLayout>

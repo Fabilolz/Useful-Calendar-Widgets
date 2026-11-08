@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/widget_split_root" android:layout_width="match_parent" android:layout_height="match_parent">
+    <ImageView android:id="@+id/widget_background_image" android:layout_width="match_parent"
+        android:layout_height="match_parent" android:scaleType="fitXY" android:src="@drawable/widget_bg_shape"
+        android:contentDescription="@null" />
+    <LinearLayout android:id="@+id/widget_split_content_root" android:layout_width="match_parent" android:layout_height="match_parent"
+        android:orientation="vertical" android:padding="14dp">
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content" android:orientation="horizontal">
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                <TextView android:id="@+id/widget_split_header" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:fontFamily="sans-serif-medium" android:letterSpacing="0.12" />
+                <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+                    android:layout_marginTop="2dp" android:orientation="horizontal" android:gravity="bottom">
+                    <TextView android:id="@+id/widget_split_day" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:fontFamily="sans-serif-light" />
+                    <TextView android:id="@+id/widget_split_month" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:layout_marginStart="6dp" android:layout_marginBottom="3dp" />
+                </LinearLayout>
+            </LinearLayout>
+            <LinearLayout android:layout_width="wrap_content" android:layout_height="wrap_content" android:gravity="end" android:orientation="vertical">
+                <ImageView android:id="@+id/widget_split_weather_icon" android:layout_width="22dp" android:layout_height="22dp" android:contentDescription="@null"/>
+                <TextView android:id="@+id/widget_split_weather_temp" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:fontFamily="sans-serif-light" />
+            </LinearLayout>
+        </LinearLayout>
+        <TextView android:layout_width="1dp" android:layout_height="0dp" android:layout_weight="1" android:importantForAccessibility="no"/>
+        <LinearLayout android:layout_width="match_parent" android:layout_height="wrap_content"
+            android:layout_marginTop="6dp" android:orientation="horizontal">
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:orientation="vertical" android:layout_marginEnd="4dp">
+                <TextView android:id="@+id/widget_split_morning_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:text="@string/morning" android:textAllCaps="true" android:layout_marginStart="8dp" android:layout_marginBottom="5dp" />
+            <FrameLayout android:id="@+id/widget_split_morning_col" android:layout_width="match_parent" android:layout_height="48dp">
+                <ImageView android:id="@+id/widget_split_morning_bg" android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:scaleType="fitXY" android:src="@drawable/widget_card_shape" android:contentDescription="@null"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="8dp" android:paddingEnd="8dp">
+                    <ImageView android:id="@+id/widget_split_morning_bar" android:layout_width="3dp"
+                        android:layout_height="28dp" android:layout_marginEnd="7dp" android:scaleType="fitXY"
+                        android:src="@drawable/widget_pill_shape" android:contentDescription="@null"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:id="@+id/widget_split_morning_event" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:layout_marginTop="2dp" android:fontFamily="sans-serif-medium" />
+                        <TextView android:id="@+id/widget_split_morning_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+                <LinearLayout android:id="@+id/widget_split_morning_extra" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+            <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content"
+                android:orientation="vertical" android:layout_marginStart="4dp">
+                <TextView android:id="@+id/widget_split_afternoon_title" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:text="@string/afternoon" android:textAllCaps="true" android:layout_marginStart="8dp" android:layout_marginBottom="5dp" />
+            <FrameLayout android:id="@+id/widget_split_afternoon_col" android:layout_width="match_parent" android:layout_height="48dp">
+                <ImageView android:id="@+id/widget_split_afternoon_bg" android:layout_width="match_parent"
+                    android:layout_height="match_parent" android:scaleType="fitXY" android:src="@drawable/widget_card_shape" android:contentDescription="@null"/>
+                <LinearLayout android:layout_width="match_parent" android:layout_height="match_parent"
+                    android:orientation="horizontal" android:gravity="center_vertical" android:paddingStart="8dp" android:paddingEnd="8dp">
+                    <ImageView android:id="@+id/widget_split_afternoon_bar" android:layout_width="3dp"
+                        android:layout_height="28dp" android:layout_marginEnd="7dp" android:scaleType="fitXY"
+                        android:src="@drawable/widget_pill_shape" android:contentDescription="@null"/>
+                    <LinearLayout android:layout_width="0dp" android:layout_weight="1" android:layout_height="wrap_content" android:orientation="vertical">
+                        <TextView android:id="@+id/widget_split_afternoon_event" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:layout_marginTop="2dp" android:fontFamily="sans-serif-medium" />
+                        <TextView android:id="@+id/widget_split_afternoon_time" android:layout_width="wrap_content" android:layout_height="wrap_content" android:includeFontPadding="false" android:maxLines="1" android:ellipsize="end" android:layout_marginTop="2dp" />
+                    </LinearLayout>
+                </LinearLayout>
+            </FrameLayout>
+                <LinearLayout android:id="@+id/widget_split_afternoon_extra" android:layout_width="match_parent"
+                    android:layout_height="wrap_content" android:orientation="vertical" android:layout_marginTop="6dp"
+                    android:visibility="gone" />
+            </LinearLayout>
+        </LinearLayout>
+    </LinearLayout>
+</FrameLayout>
